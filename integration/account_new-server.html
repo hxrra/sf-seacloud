@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <title>SeaCloud - Create server</title>
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+
+    <!-- Favicons -->
+    <link href="img/favicon.ico" rel="icon">
+    <link href="img/apple-touch-icon.png" rel="apple-touch-icon">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i"
+          rel="stylesheet">
+
+    <!-- Vendor CSS Files -->
+    <link href="assets/aos/aos.css" rel="stylesheet">
+    <link href="assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="assets/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <link href="assets/remixicon/remixicon.css" rel="stylesheet">
+
+    <!-- Template Main CSS File -->
+    <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body>
+
+<!-- ======= Header ======= -->
+<header id="header" class="fixed-top d-flex align-items-center">
+    <div class="container d-flex align-items-center justify-content-between">
+
+        <div class="logo">
+            <a href="index.html">
+                <img src="img/logo-navbar.png" alt="SeaCloud" class="img-fluid">
+            </a>
+        </div>
+
+        <nav id="navbar" class="navbar">
+            <ul>
+                <li><a class="nav-link" href="index.html">Home</a></li>
+                <li><a class="nav-link" href="about.html">About</a></li>
+                <li><a class="nav-link" href="services.html">Services</a></li>
+                <li><a class="nav-link" href="contact.html">Contact</a></li>
+                <li><a class="sign-up" href="sign-up.html">Sign up</a></li>
+                <li><a class="sign-in" href="sign-in.html">Sign in</a></li>
+            </ul>
+            <i class="bi bi-list mobile-nav-toggle"></i>
+        </nav><!-- .navbar -->
+
+    </div>
+</header><!-- End Header -->
+
+<main id="main">
+
+    <!-- ======= Breadcrumbs Section ======= -->
+    <section class="breadcrumbs">
+        <div class="container">
+
+            <div class="d-flex justify-content-between align-items-center">
+                <h2>Create server</h2>
+                <ol>
+                    <li><a href="index.html">Home</a></li>
+                    <li>Create server</li>
+                </ol>
+            </div>
+
+        </div>
+    </section><!-- End Breadcrumbs Section -->
+
+    <!-- ======= Dashboard Section ======= -->
+    <section id="dashboard" class="inner-page">
+        <div class="container">
+
+            <div class="row gy-4">
+
+                <div class="col-md-4 col-lg-3">
+                    <div class="list-group pe-5">
+                        <a href="account_dashboard.html" class="list-group-item list-group-item-action">
+                            Dashboard
+                        </a>
+                        <a href="account_profil.html" class="list-group-item list-group-item-action">
+                            My profil
+                        </a>
+                        <a href="#" class="list-group-item list-group-item-action">
+                            Logout
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-md-8 col-lg-9">
+                    <h2 class="mb-5">Create your new server</h2>
+
+                    <form>
+                        <div class="mb-4">
+                            <label for="new-server-name" class="form-label">Server name</label>
+                            <input type="email" class="form-control" id="new-server-name">
+                            <div id="new-server-name-help" class="form-text">Leave blank for auto generation.</div>
+                        </div>
+
+                        <div class="mb-4">
+                            <label for="new-server-datacenter" class="form-label">Datacenter</label>
+                            <select class="form-select" id="new-server-datacenter">
+                                <option selected>Choose your server location</option>
+                                <option value="1">New York</option>
+                                <option value="2">San Francisco</option>
+                                <option value="3">Amsterdam</option>
+                                <option value="4">Singapore</option>
+                                <option value="5">London</option>
+                                <option value="6">Frankfurt</option>
+                                <option value="7">Toronto</option>
+                                <option value="8">Bangalore</option>
+                            </select>
+                        </div>
+
+                        <div class="mb-4">
+                            <label for="new-server-distribution" class="form-label">Distribution</label>
+                            <select class="form-select" id="new-server-distribution">
+                                <option selected>Choose your server distribution</option>
+                                <option value="1">Ubuntu 20.04 (LTS) x64</option>
+                                <option value="2">FreeBSD 12.2 x64</option>
+                                <option value="3">Fedora 34 x64</option>
+                                <option value="4">Debian 10 x64</option>
+                                <option value="5">CentOS 8.3 x64</option>
+                            </select>
+                        </div>
+
+                        <div class="mb-4 slider">
+                            <span class="badge badge bg-primary float-end"><span>1</span> Intel CPU</span>
+                            <label for="new-server-cpu" class="form-label">CPU</label>
+                            <input type="range" class="form-range" min="1" max="16" value="1" id="new-server-cpu">
+                        </div>
+
+                        <div class="mb-4 slider">
+                            <span class="badge badge bg-primary float-end"><span>1</span> GB RAM</span>
+                            <label for="new-server-ram" class="form-label">RAM</label>
+                            <input type="range" class="form-range" min="1" max="16"  value="1" id="new-server-ram">
+                        </div>
+
+                        <div>
+                            <button type="submit" class="btn btn-primary">Create</button>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </section><!-- End Login Section -->
+
+</main><!-- End #main -->
+
+<!-- ======= Footer ======= -->
+<footer id="footer">
+    <div class="container">
+        <div class="row d-flex align-items-center">
+            <div class="col-lg-6 text-lg-left text-center">
+                <div class="copyright">
+                    &copy; Copyright <strong>SeaCloud</strong>. All Rights Reserved
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <nav class="footer-links text-lg-right text-center pt-2 pt-lg-0">
+                    <a href="index.html">Home</a>
+                    <a href="about.html">About</a>
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Use</a>
+                </nav>
+            </div>
+        </div>
+    </div>
+</footer><!-- End Footer -->
+
+<a href="#" class="back-to-top d-flex align-items-center justify-content-center">
+    <i class="bi bi-arrow-up-short"></i>
+</a>
+
+<!-- Vendor JS Files -->
+<script src="assets/aos/aos.js"></script>
+<script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+<!-- Template Main JS File -->
+<script src="js/main.js"></script>
+<script src="js/create.js"></script>
+
+</body>
+
+</html>
