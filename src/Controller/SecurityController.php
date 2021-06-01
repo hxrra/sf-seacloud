@@ -10,20 +10,20 @@ use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
 class SecurityController extends AbstractController
 {
     /**
-     * @Route("/sign-in", name="app_login")
+     * @Route("/sign-in", name="page_login")
      */
     public function login(AuthenticationUtils $authenticationUtils): Response
     {
-        // if ($this->getUser()) {
-        //     return $this->redirectToRoute('target_path');
-        // }
+         if ($this->getUser()) {
+             return $this->redirectToRoute('account_profile');
+         }
 
         // get the login error if there is one
         $error = $authenticationUtils->getLastAuthenticationError();
         // last username entered by the user
         $lastUsername = $authenticationUtils->getLastUsername();
 
-        return $this->render('account/profile.html.twig', ['last_username' => $lastUsername, 'error' => $error]);
+        return $this->render('/security/sign-in.html.twig', ['last_username' => $lastUsername, 'error' => $error]);
     }
 
     /**
@@ -41,7 +41,7 @@ class SecurityController extends AbstractController
 //        // last username entered by the user
 //        $lastUsername = $authenticationUtils->getLastUsername();
 //
-//        return $this->render('account/profile.html.twig', ['last_username' => $lastUsername, 'error' => $error]);
+//        return $this->render('profile.html.twig', ['last_username' => $lastUsername, 'error' => $error]);
 //    }
 
     /**

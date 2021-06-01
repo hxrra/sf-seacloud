@@ -1,0 +1,87 @@
+{% extends'base.html.twig' %}
+
+{% block title %}SeaCloud - About Us{% endblock %}
+
+{% block body %}
+    <main id="main">
+
+        <!-- ======= Breadcrumbs Section ======= -->
+        <section class="breadcrumbs">
+            <div class="container">
+
+                <div class="d-flex justify-content-between align-items-center">
+                    <h2>Create server</h2>
+                    <ol>
+                        <li><a href="index.html">Home</a></li>
+                        <li>Create server</li>
+                    </ol>
+                </div>
+
+            </div>
+        </section><!-- End Breadcrumbs Section -->
+
+        <!-- ======= Dashboard Section ======= -->
+        <section id="dashboard" class="inner-page">
+            <div class="container">
+
+                <div class="row gy-4">
+
+                    <div class="col-md-4 col-lg-3">
+                        <div class="list-group pe-5">
+                            <a href="account_dashboard.html" class="list-group-item list-group-item-action">
+                                Dashboard
+                            </a>
+                            <a href="account_profil.html" class="list-group-item list-group-item-action">
+                                My profil
+                            </a>
+                            <a href="#" class="list-group-item list-group-item-action">
+                                Logout
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="col-md-8 col-lg-9">
+                        <h2 class="mb-5">Create your new server</h2>
+                        {{form_start(form)}}
+                        <form>
+
+                            <div class="mb-4">
+                                <label for="new-server-name" class="form-label">Server name</label>
+                                {{form_widget(form.name)}}
+                                <div id="new-server-name-help" class="form-text">Leave blank for auto generation.</div>
+                            </div>
+
+                            <div class="mb-4">
+                                <label for="new-server-datacenter" class="form-label">Datacenter</label>
+                                {{form(form.location)}}
+                            </div>
+
+                            <div class="mb-4">
+                                <label for="new-server-distribution" class="form-label">Distribution</label>
+                                {{form(form.distribution)}}
+                            </div>
+
+                            <div class="mb-4 slider">
+                                <span class="badge badge bg-primary float-end"><span>1</span> Intel CPU</span>
+                                <label for="new-server-cpu" class="form-label">CPU</label>
+                                {{form(form.cpu)}}
+                            </div>
+                            <div class="mb-4 slider">
+                                <span class="badge badge bg-primary float-end"><span>1</span> GB RAM</span>
+                                <label for="new-server-ram" class="form-label">RAM</label>
+                                {{form(form.ram)}}
+                            </div>
+
+                            <div>
+                                <button type="submit" class="btn btn-primary">Create</button>
+                            </div>
+                            {{form_end(form)}}
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+        </section><!-- End Login Section -->
+
+    </main><!-- End #main -->
+{% endblock %}

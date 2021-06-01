@@ -10,10 +10,10 @@
             <div class="container">
 
                 <div class="d-flex justify-content-between align-items-center">
-                    <h2>My profil</h2>
+                    <h2>Dashboard</h2>
                     <ol>
                         <li><a href="index.html">Home</a></li>
-                        <li>My profil</li>
+                        <li>Dashboard</li>
                     </ol>
                 </div>
 
@@ -28,50 +28,116 @@
 
                     <div class="col-md-4 col-lg-3">
                         <div class="list-group pe-5">
-                            <a href="" class="list-group-item list-group-item-action">
+                            <a href="{{ path('account_dashboard') }}" class="list-group-item list-group-item-action">
                                 Dashboard
                             </a>
-                            <a href="profile.html.twig" class="list-group-item list-group-item-action">
+                            <a href="{{ path('account_profile') }}" class="list-group-item list-group-item-action">
                                 My profil
                             </a>
-                            <a href="{{ path('app_logout') }}" class="list-group-item list-group-item-action">
+                            <a href="#" class="list-group-item list-group-item-action">
                                 Logout
                             </a>
                         </div>
                     </div>
 
                     <div class="col-md-8 col-lg-9">
-                        <h2 class="mb-5">My profil</h2>
+                        <a href="{{ path('account_new-server') }}" class="btn btn-primary float-end">
+                            New server
+                        </a>
 
-                        <form>
-                            <div class="mb-4">
-                                <label for="profil-email" class="form-label">Email address</label>
-                                <input type="email" class="form-control" id="profil-email" placeholder="email@example.com" readonly>
-                            </div>
+                        <h2 class="mb-3">Servers</h2>
 
-                            <div class="row mb-4">
-                                <div class="col">
-                                    <label for="signup-password" class="form-label">Password</label>
-                                    <input type="password" class="form-control" id="signup-password" placeholder="" value="" required="">
-                                    <div class="invalid-feedback">
-                                        Please enter your password.
+                        <div class="card mb-3">
+                            <div class="row g-0">
+                                <div class="col-md-3">
+                                    <div class="card-body">
+                                        <h4 class="mb-3">SC-NY-Ubuntu-01</h4>
+                                        <p>
+                                            <strong>IP</strong>
+                                            <span class="text-muted">255.255.255.255</span>
+                                        </p>
+                                        <p>
+                                            <strong>Status</strong>
+                                            <span class="badge bg-success">Ready</span>
+                                        </p>
                                     </div>
                                 </div>
+                                <div class="col-md-6 border-start">
+                                    <div class="card-body">
+                                        <dl class="row mb-0">
+                                            <dt class="col-sm-5">Datacenter</dt>
+                                            <dd class="col-sm-7">New York</dd>
 
-                                <div class="col">
-                                    <label for="signup-confirmation" class="form-label">Confirmation</label>
-                                    <input type="password" class="form-control" id="signup-confirmation" placeholder="" value="" required="">
-                                    <div class="invalid-feedback">
-                                        Please enter your password confirmation.
+                                            <dt class="col-sm-5">Distribution</dt>
+                                            <dd class="col-sm-7">Ubuntu 20.04 (LTS) x64</dd>
+
+                                            <dt class="col-sm-5">CPU</dt>
+                                            <dd class="col-sm-7">2 Intel CPUs</dd>
+
+                                            <dt class="col-sm-5">RAM</dt>
+                                            <dd class="col-sm-7">4 GB</dd>
+                                        </dl>
+                                    </div>
+                                </div>
+                                <div class="col-md-3 border-start">
+                                    <div class="card-body">
+                                        <a class="btn btn-primary mb-3" href="#">
+                                            Restart
+                                        </a>
+                                        <br>
+                                        <a class="btn btn-light" href="#">
+                                            Reset
+                                        </a>
                                     </div>
                                 </div>
                             </div>
+                        </div>
 
-                            <div>
-                                <button type="submit" class="btn btn-primary">Save</button>
+                        <div class="card mb-3">
+                            <div class="row g-0">
+                                <div class="col-md-3">
+                                    <div class="card-body">
+                                        <h4 class="mb-3">SC-AM-Debian-01</h4>
+                                        <p>
+                                            <strong>IP</strong>
+                                            <span class="text-muted">128.128.128.128</span>
+                                        </p>
+                                        <p>
+                                            <strong>Status</strong>
+                                            <span class="badge bg-warning">Pending</span>
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 border-start">
+                                    <div class="card-body">
+                                        <dl class="row mb-0">
+                                            <dt class="col-sm-5">Datacenter</dt>
+                                            <dd class="col-sm-7">Amsterdam</dd>
+
+                                            <dt class="col-sm-5">Distribution</dt>
+                                            <dd class="col-sm-7">Debian 10 x64</dd>
+
+                                            <dt class="col-sm-5">CPU</dt>
+                                            <dd class="col-sm-7">1 Intel CPU</dd>
+
+                                            <dt class="col-sm-5">RAM</dt>
+                                            <dd class="col-sm-7">2 GB</dd>
+                                        </dl>
+                                    </div>
+                                </div>
+                                <div class="col-md-3 border-start">
+                                    <div class="card-body">
+                                        <a class="btn btn-primary mb-3" href="#">
+                                            Restart
+                                        </a>
+                                        <br>
+                                        <a class="btn btn-light" href="#">
+                                            Reset
+                                        </a>
+                                    </div>
+                                </div>
                             </div>
-
-                        </form>
+                        </div>
                     </div>
                 </div>
 
@@ -79,5 +145,4 @@
         </section><!-- End Login Section -->
 
     </main><!-- End #main -->
-
 {% endblock %}

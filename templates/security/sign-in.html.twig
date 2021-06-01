@@ -3,7 +3,7 @@
 {% block title %}SeaCloud - Sign In{% endblock %}
 
 {% block body %}
-<main id="main">
+    <main id="main">
 
         <!-- ======= Breadcrumbs Section ======= -->
         <section class="breadcrumbs">
@@ -34,24 +34,24 @@
                         Sign in to your account and start working with your servers.
                     </p>
 
-                    {% if error %}
-                        <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
-                    {% endif %}
+                    <form method="post">
+                        {% if error %}
+                            <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+                        {% endif %}
 
-                    {% if app.user %}
+                        {% if app.user %}
+                            <div class="mb-3">
+                                You are logged in as {{ app.user.username }}, <a href="{{ path('app_logout') }}">Logout</a>
+                            </div>
+                        {% endif %}
+
                         <div class="mb-3">
-                            You are logged in as {{ app.user.username }}, <a href="{{ path('app_logout') }}">Logout</a>
-                        </div>
-                    {% endif %}
-                    
-                    <form>
-                        <div class="mb-3">
-                            <label for="login-email" class="form-label">Email address</label>
+                            <label for="inputEmail" class="form-label">Email address</label>
                             <input type="email" value="{{ last_username }}" name="email" class="form-control" id="inputEmail" autocomplete="email" required autofocus placeholder="name@example.com">
                         </div>
 
                         <div class="mb-3">
-                            <label for="inputEmail" class="form-label">Password</label>
+                            <label for="inputPassword" class="form-label">Password</label>
                             <input type="password" name="password" class="form-control" id="inputPassword" placeholder="" value="" required="" autocomplete="current-password">
                             <input type="hidden" name="_csrf_token"
                                    value="{{ csrf_token('authenticate') }}">
@@ -68,6 +68,9 @@
             </div>
         </section><!-- End Login Section -->
 
-</main><!-- End #main -->
+
+
+
+    </main><!-- End #main -->
 
 {% endblock %}
