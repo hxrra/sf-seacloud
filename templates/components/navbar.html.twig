@@ -1,0 +1,21 @@
+<div class="container d-flex align-items-center justify-content-between">
+
+        <div class="logo">
+            <a href="index.html">
+                <img src="/img/logo-navbar.png" alt="SeaCloud" class="img-fluid">
+            </a>
+        </div>
+
+        <nav id="navbar" class="navbar">
+            <ul>
+                <li><a class="nav-link active" href="{{ path('page_home') }}">Home</a></li>
+                <li><a class="nav-link" href="{{ path('page_about') }}">About</a></li>
+                <li><a class="nav-link" href="{{ path('page_services') }}">Services</a></li>
+                <li><a class="nav-link" href="{{ path('page_contact') }}">Contact</a></li>
+                <li><a class="sign-up" href="">Sign up</a></li>
+                <li><a class="sign-in" href="{{ path('app_login') }}">Sign in</a></li>
+            </ul>
+            <i class="bi bi-list mobile-nav-toggle"></i>
+        </nav><!-- .navbar -->
+
+</div>

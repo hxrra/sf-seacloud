@@ -1,0 +1,73 @@
+{% extends'base.html.twig' %}
+
+{% block title %}SeaCloud - Sign In{% endblock %}
+
+{% block body %}
+<main id="main">
+
+        <!-- ======= Breadcrumbs Section ======= -->
+        <section class="breadcrumbs">
+            <div class="container">
+
+                <div class="d-flex justify-content-between align-items-center">
+                    <h2>Sign in</h2>
+                    <ol>
+                        <li><a href="index.html">Home</a></li>
+                        <li>Sign in</li>
+                    </ol>
+                </div>
+
+            </div>
+        </section><!-- End Breadcrumbs Section -->
+
+        <!-- ======= Login Section ======= -->
+        <section id="login" class="inner-page">
+            <div class="container">
+
+                <div class="section-title" data-aos="fade-up">
+                    <h2>Sign in</h2>
+                </div>
+
+                <div class="p-5 rounded bg-light" style="max-width: 640px;margin:auto" data-aos="fade-up">
+                    <h1 class="h2 mb-3 text-center">Sea Cloud account</h1>
+                    <p class="lead border-bottom pb-3 mb-3 text-center">
+                        Sign in to your account and start working with your servers.
+                    </p>
+
+                    {% if error %}
+                        <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+                    {% endif %}
+
+                    {% if app.user %}
+                        <div class="mb-3">
+                            You are logged in as {{ app.user.username }}, <a href="{{ path('app_logout') }}">Logout</a>
+                        </div>
+                    {% endif %}
+                    
+                    <form>
+                        <div class="mb-3">
+                            <label for="login-email" class="form-label">Email address</label>
+                            <input type="email" value="{{ last_username }}" name="email" class="form-control" id="inputEmail" autocomplete="email" required autofocus placeholder="name@example.com">
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="inputEmail" class="form-label">Password</label>
+                            <input type="password" name="password" class="form-control" id="inputPassword" placeholder="" value="" required="" autocomplete="current-password">
+                            <input type="hidden" name="_csrf_token"
+                                   value="{{ csrf_token('authenticate') }}">
+                            <div class="invalid-feedback">
+                                Please enter your password.
+                            </div>
+                        </div>
+
+                        <div class="text-center">
+                            <button type="submit" class="btn btn-primary btn-lg">Sign in</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section><!-- End Login Section -->
+
+</main><!-- End #main -->
+
+{% endblock %}
