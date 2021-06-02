@@ -53,23 +53,23 @@
 
                             <div class="mb-4">
                                 <label for="new-server-datacenter" class="form-label">Datacenter</label>
-                                {{form(form.location)}}
+                                {{form_widget(form.location)}}
                             </div>
 
                             <div class="mb-4">
                                 <label for="new-server-distribution" class="form-label">Distribution</label>
-                                {{form(form.distribution)}}
+                                {{form_widget(form.distribution)}}
                             </div>
 
                             <div class="mb-4 slider">
-                                <span class="badge badge bg-primary float-end"><span>1</span> Intel CPU</span>
-                                <label for="new-server-cpu" class="form-label">CPU</label>
-                                {{form(form.cpu)}}
+                                <span class="badge badge bg-primary float-end"><span>1</span> CPU </span>
+                                <label for="new-server-cpu" class="form-label">{{ form_label(form.cpu) }}</label>
+                                {{ form_widget(form.cpu, {'attr': {'class': 'form-range'}}) }}
                             </div>
                             <div class="mb-4 slider">
                                 <span class="badge badge bg-primary float-end"><span>1</span> GB RAM</span>
-                                <label for="new-server-ram" class="form-label">RAM</label>
-                                {{form(form.ram)}}
+                                <label for="new-server-ram" class="form-label">{{ form_label(form.ram) }}</label>
+                                {{ form_widget(form.ram, {'attr': {'class': 'form-range'}}) }}
                             </div>
 
                             <div>
@@ -84,4 +84,6 @@
         </section><!-- End Login Section -->
 
     </main><!-- End #main -->
+
+    <script src="/js/create.js"></script>
 {% endblock %}

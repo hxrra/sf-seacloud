@@ -10,6 +10,10 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class Server
 {
+    const STATE_PENDING = 0;
+    const STATE_STOPPED = 1;
+    const STATE_READY = 2;
+
     /**
      * @ORM\Id
      * @ORM\GeneratedValue
@@ -40,12 +44,18 @@ class Server
     /**
      * @ORM\Column(type="integer")
      */
-    private $state;
+    private $state= self::STATE_PENDING;
 
     /**
      * @ORM\Column(type="integer")
      */
-    private $cpu;
+    private $cpu=1;
+
+
+    /**
+     * @ORM\Column(type="integer")
+     */
+    private $ram=1;
 
     public function getId(): ?int
     {
@@ -126,7 +136,7 @@ class Server
 
     public function getRam(): ?int
     {
-        return $this->cpu;
+        return $this->ram;
     }
 
     public function setRam(int $ram): self

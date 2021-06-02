@@ -100,6 +100,3 @@ FreeBSD 12.2 x64 | FreeBSD
 Fedora 34 x64 | Fedora
 Debian 10 x64 | Debian
 CentOS 8.3 x64 | CentOS
-
-
-TODO POUR LE 02/06 : continuer la page new-server

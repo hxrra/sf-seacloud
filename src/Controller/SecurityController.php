@@ -27,7 +27,7 @@ class SecurityController extends AbstractController
     }
 
     /**
-     * @Route("/sign-up", name="app_register")
+     * @Route("/sign-up", name="page_register")
      */
     // TODO : Faire la même chose pour le register
 //    public function register(AuthenticationUtils $authenticationUtils): Response

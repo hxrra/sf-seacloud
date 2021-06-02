@@ -34,73 +34,28 @@
                             <a href="{{ path('account_profile') }}" class="list-group-item list-group-item-action">
                                 My profil
                             </a>
-                            <a href="#" class="list-group-item list-group-item-action">
+                            <a href="{{ path('app_logout') }}" class="list-group-item list-group-item-action">
                                 Logout
                             </a>
                         </div>
                     </div>
 
                     <div class="col-md-8 col-lg-9">
+
                         <a href="{{ path('account_new-server') }}" class="btn btn-primary float-end">
                             New server
                         </a>
 
                         <h2 class="mb-3">Servers</h2>
-
+                        {% for server in servers %}
                         <div class="card mb-3">
                             <div class="row g-0">
                                 <div class="col-md-3">
                                     <div class="card-body">
-                                        <h4 class="mb-3">SC-NY-Ubuntu-01</h4>
+                                        <a href="{{ path('account_server_detail', { 'id': server.id}) }}"><h4 class="mb-3">{{server.name}}</h4></a>
                                         <p>
                                             <strong>IP</strong>
                                             <span class="text-muted">255.255.255.255</span>
-                                        </p>
-                                        <p>
-                                            <strong>Status</strong>
-                                            <span class="badge bg-success">Ready</span>
-                                        </p>
-                                    </div>
-                                </div>
-                                <div class="col-md-6 border-start">
-                                    <div class="card-body">
-                                        <dl class="row mb-0">
-                                            <dt class="col-sm-5">Datacenter</dt>
-                                            <dd class="col-sm-7">New York</dd>
-
-                                            <dt class="col-sm-5">Distribution</dt>
-                                            <dd class="col-sm-7">Ubuntu 20.04 (LTS) x64</dd>
-
-                                            <dt class="col-sm-5">CPU</dt>
-                                            <dd class="col-sm-7">2 Intel CPUs</dd>
-
-                                            <dt class="col-sm-5">RAM</dt>
-                                            <dd class="col-sm-7">4 GB</dd>
-                                        </dl>
-                                    </div>
-                                </div>
-                                <div class="col-md-3 border-start">
-                                    <div class="card-body">
-                                        <a class="btn btn-primary mb-3" href="#">
-                                            Restart
-                                        </a>
-                                        <br>
-                                        <a class="btn btn-light" href="#">
-                                            Reset
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="card mb-3">
-                            <div class="row g-0">
-                                <div class="col-md-3">
-                                    <div class="card-body">
-                                        <h4 class="mb-3">SC-AM-Debian-01</h4>
-                                        <p>
-                                            <strong>IP</strong>
-                                            <span class="text-muted">128.128.128.128</span>
                                         </p>
                                         <p>
                                             <strong>Status</strong>
@@ -112,22 +67,22 @@
                                     <div class="card-body">
                                         <dl class="row mb-0">
                                             <dt class="col-sm-5">Datacenter</dt>
-                                            <dd class="col-sm-7">Amsterdam</dd>
-
+                                            <dd class="col-sm-7">{{server.location.name}}
                                             <dt class="col-sm-5">Distribution</dt>
-                                            <dd class="col-sm-7">Debian 10 x64</dd>
+                                            <dd class="col-sm-7">{{server.distribution.name}}</dd>
 
                                             <dt class="col-sm-5">CPU</dt>
-                                            <dd class="col-sm-7">1 Intel CPU</dd>
+                                            <dd class="col-sm-7">{{server.cpu}}</dd>
 
                                             <dt class="col-sm-5">RAM</dt>
-                                            <dd class="col-sm-7">2 GB</dd>
+                                            <dd class="col-sm-7">{{server.ram}}</dd>
                                         </dl>
                                     </div>
                                 </div>
+
                                 <div class="col-md-3 border-start">
                                     <div class="card-body">
-                                        <a class="btn btn-primary mb-3" href="#">
+                                        <a class="btn btn-primary mb-3" href="{{ path('server_reboot',{'id: server.id'}) }}">
                                             Restart
                                         </a>
                                         <br>
@@ -136,8 +91,10 @@
                                         </a>
                                     </div>
                                 </div>
+
                             </div>
                         </div>
+                        {% endfor %}
                     </div>
                 </div>
 
