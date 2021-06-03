@@ -60,8 +60,18 @@ class AccountController extends AbstractController
 
         $serverdetail = $repository->find($id);
 
-        return $this->render('account/server-detail.html.twig', ['servers' => $serverdetail]);
+        return $this->render('account/server-detail.html.twig', ['server' => $serverdetail]);
 
+    }
+
+    /**
+     * @Route ("api/{id}/ready" , name="server_ready", requirements={"id":"\d+"})
+     */
+    public function ready(int $id): Response
+    {
+        $server = $this->getDoctrine()->getRepository(Server::class)->find($id);
+
+        // TODO : Relier l'api au server
     }
 
     /**
@@ -70,10 +80,12 @@ class AccountController extends AbstractController
     public function reboot(int $id): Response
     {
         /** @var Server $server */
-        $server = $repository->findBy(['user' => $this->getUser()]);
+        //recupère les infos du serveur
+        $server = $this->getDoctrine()->getRepository(Server::class)->find($id);
 
         $server->setState(Server::STATE_STOPPED);
 
+        $entityManager = $this->getDoctrine()->getManager();
         $entityManager->persist($server);
         $entityManager->flush();
 

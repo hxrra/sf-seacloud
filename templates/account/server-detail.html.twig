@@ -1,6 +1,6 @@
 {% extends'base.html.twig' %}
 
-{% block title %}SeaCloud - About Us{% endblock %}
+{% block title %}SeaCloud - Server detail{% endblock %}
 
 {% block body %}
     <main id="main">
@@ -43,7 +43,7 @@
                     <div class="col-md-8 col-lg-9">
                         <h2 class="mb-5">Server detail</h2>
 
-                        {% for server in servers %}
+
                         <div class="card mb-5">
                             <div class="card-header">
                                 <h1 class="h4 my-2">{{server.name}}</h1>
@@ -55,7 +55,15 @@
                                 </div>
                                 <div class="col">
                                     <strong>Status</strong>
-                                    <span class="badge bg-success">Ready</span>
+                                    {% if (server.state == 1) %}
+                                    <span class="badge bg-danger">Stopped</span>
+
+                                    {% elseif (server.state == 0) %}
+                                    <span class="badge bg-warning">Pending</span>
+
+                                    {% elseif (server.state == 2) %}
+                                        <span class="badge bg-success">Ready</span>
+                                    {% endif %}
                                 </div>
                             </div>
                             <div class="card-body border-top">
@@ -99,7 +107,6 @@
 
                             </div>
                         </div>
-                    {% endfor %}
                     </div>
                 </div>
 
