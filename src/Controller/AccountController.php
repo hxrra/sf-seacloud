@@ -43,7 +43,7 @@ class AccountController extends AbstractController
      */
     public function dashboard(): Response
     {
-//        Affiche le template
+
         $repository = $this->getDoctrine()->getrepository(server::class);
 
         $servers = $repository->findBy(['user' => $this->getUser()]);
@@ -52,13 +52,13 @@ class AccountController extends AbstractController
     }
 
     /**
-     * @Route ("/{id}" , name="server_detail")
+     * @Route ("/{id}/server-detail" , name="server_detail")
      */
     public function detail($id): Response
     {
         $repository = $this->getDoctrine()->getrepository(server::class);
 
-        $serverdetail = $repository->findBy(['user' => $this->getUser()]);
+        $serverdetail = $repository->find($id);
 
         return $this->render('account/server-detail.html.twig', ['servers' => $serverdetail]);
 
